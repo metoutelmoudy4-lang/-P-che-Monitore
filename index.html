@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎣 Péche Monitore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🎣 Péche Monitore</h1>
+                <p class="subtitle">Suivi et gestion de vos sessions de pêche</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <button class="nav-btn active" data-tab="sessions">📋 Mes Sessions</button>
+            <button class="nav-btn" data-tab="new-session">➕ Nouvelle Session</button>
+            <button class="nav-btn" data-tab="stats">📊 Statistiques</button>
+        </nav>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            
+            <!-- Onglet: Mes Sessions -->
+            <section id="sessions" class="tab-content active">
+                <h2>Mes Sessions de Pêche</h2>
+                <div id="sessions-list" class="sessions-grid">
+                    <p class="empty-state">Aucune session enregistrée. Créez-en une pour commencer!</p>
+                </div>
+            </section>
+
+            <!-- Onglet: Nouvelle Session -->
+            <section id="new-session" class="tab-content">
+                <h2>Enregistrer une nouvelle session</h2>
+                <form id="session-form" class="form">
+                    <div class="form-group">
+                        <label for="lieu">📍 Lieu de pêche *</label>
+                        <input type="text" id="lieu" name="lieu" placeholder="Ex: Lac de Montagne" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">📅 Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="heure_debut">⏰ Heure de début</label>
+                            <input type="time" id="heure_debut" name="heure_debut">
+                        </div>
+                        <div class="form-group">
+                            <label for="heure_fin">⏰ Heure de fin</label>
+                            <input type="time" id="heure_fin" name="heure_fin">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre_captures">🐟 Nombre de captures</label>
+                            <input type="number" id="nombre_captures" name="nombre_captures" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="especes">🐟 Espèces capturées</label>
+                            <input type="text" id="especes" name="especes" placeholder="Ex: Truite, Carpe (séparées par des virgules)">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">📝 Notes</label>
+                        <textarea id="notes" name="notes" placeholder="Notes supplémentaires, conditions météo, etc." rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">✅ Enregistrer la session</button>
+                </form>
+            </section>
+
+            <!-- Onglet: Statistiques -->
+            <section id="stats" class="tab-content">
+                <h2>Statistiques</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Sessions</h3>
+                        <p class="stat-value" id="total-sessions">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Captures</h3>
+                        <p class="stat-value" id="total-captures">0</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>🏆 Espèces les plus capturées</h3>
+                    <div id="top-species" class="species-list">
+                        <p class="empty-state">Aucune donnée disponible</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pied de page -->
+        <footer class="footer">
+            <p>&copy; 2026 Péche Monitore | Suivi de vos activités de pêche</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
